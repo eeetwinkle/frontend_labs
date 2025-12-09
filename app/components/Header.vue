@@ -3,8 +3,7 @@
     <div class="inner">
 
       <div class="left">
-        <img src="~/assets/images/logo.svg" class="logo" />
-
+        <img src="../assets/images/logo-header.svg" class="logo" />
         <ul class="menu">
           <li>Реализованные проекты</li>
           <li>Новости</li>
