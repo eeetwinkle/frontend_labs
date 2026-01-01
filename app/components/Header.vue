@@ -3,8 +3,7 @@
     <div class="inner">
 
       <div class="left">
-        <img src="~/assets/images/logo.svg" class="logo" />
-
+        <img src="../assets/images/logo-header.svg" class="logo" />
         <ul class="menu">
           <li>Реализованные проекты</li>
           <li>Новости</li>
@@ -15,7 +14,9 @@
       <div class="right">
         <div class="phone-block">
           <img src="~/assets/images/phone.svg" class="phone-icon" />
-          <span class="phone-text">+7 (900) 900-90-90</span>
+          <a href="tel:+79009009090" class="contact">
+            <span class="phone-text">+7 (900) 900-90-90</span>
+          </a>
         </div>
 
         <Button class="make-request">Оставить заявку</Button>
@@ -97,4 +98,9 @@
   border-radius: 10px;
   border-color: vars.$color-white;
 }
+.contact {
+  text-decoration: none;
+}
 </style>
+<script setup lang="ts">
+</script>
