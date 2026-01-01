@@ -111,4 +111,8 @@
   border-radius: 10px;
   border-color: vars.$color-footer;
 }
+.contact {
+  color: vars.$color-white;
+  text-decoration: none;
+}
 </style>
