@@ -36,15 +36,17 @@
 
     <Button class="make-request">Оставить заявку</Button>
 
-    <div class="bottom-text">© Загдом, 2021</div>
-    <div class="bottom-text">Политика конфиденциальности</div>
-    <div class="bottom-text">Пользовательское соглашение</div>
-    <div></div>
+    <div class="info">
+      <div class="bottom-text">© Загдом, 2021</div>
+      <div class="bottom-text">Политика конфиденциальности</div>
+      <div class="bottom-text">Пользовательское соглашение</div>
+    </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 @use "~/assets/scss/variables" as vars;
+@use "~/assets/scss/mixins" as mixins;
 
 .footer {
   display: grid;
@@ -54,11 +56,34 @@
   background: vars.$color-footer;
   color: vars.$color-white;
   margin-top: auto;
+  @include mixins.large {
+    grid-template-columns: 1fr 1fr;
+    padding: 37px 32px;
+    grid-row-gap: 40px;
+  }
+
+  @include mixins.small {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+    justify-items: start;
+    text-align: left;
+    grid-row-gap: 32px;
+  }
 }
 
 .logo {
   width: 160px;
   height: 39px;
+  @include mixins.large {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  @include mixins.small {
+    grid-column: auto;
+    grid-row: auto;
+    margin-bottom: 8px;
+  }
 }
 
 .sections {
@@ -71,6 +96,27 @@
   font-family: vars.$font-base;
   font-size: 16px;
   line-height: 19px;
+  @include mixins.large {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  @include mixins.small {
+    align-items: flex-start;
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+.contacts-list {
+  @include mixins.large {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  @include mixins.small {
+    grid-column: auto;
+    grid-row: auto;
+  }
 }
 
 .contacts-list .text {
@@ -91,14 +137,13 @@
   height: 16px;
 }
 
-.btn {
-  justify-self: end;
-}
-
 .bottom-text {
   font-size: 14px;
   opacity: 0.6;
   font-family: vars.$font-base;
+  @include mixins.small {
+    font-size: 12px;
+  }
 }
 
 .make-request{
@@ -110,6 +155,43 @@
   font-family: vars.$font-title;
   border-radius: 10px;
   border-color: vars.$color-footer;
+  justify-self: end;
+  @include mixins.large {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  @include mixins.small {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: start;
+    width: 100%;
+    max-width: 204px;
+    margin-top: 8px;
+  }
+}
+.info {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include mixins.large {
+    grid-row: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 30px;
+    margin-top: 20px;
+  }
+
+  @include mixins.small {
+    grid-column: auto;
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
 }
 .contact {
   color: vars.$color-white;
