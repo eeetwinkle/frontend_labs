@@ -20,7 +20,12 @@
         </div>
 
         <Button class="make-request">Оставить заявку</Button>
+        <Button class="btn-mobile" @click="isDrawerOpen = true">
+          <img src="~/assets/images/menu.svg" class="menu-icon" />
+        </Button>
       </div>
+
+      <Drawer :isOpen="isDrawerOpen" @close="isDrawerOpen = false" />
 
     </div>
   </header>
@@ -33,6 +38,14 @@
 .header {
   padding: vars.$header-padding-y vars.$header-padding-x;
   background: vars.$color-white;
+
+  @include mixins.large {
+    padding: 24px 32px;
+  }
+
+  @include mixins.small {
+    padding: 16px;
+  }
 }
 
 .inner {
@@ -46,6 +59,9 @@
   @include mixins.flex-row;
   height: 39px;
   gap: vars.$logo-menu-gap;
+  @include mixins.large {
+    gap: 20px;
+  }
 }
 
 .logo {
@@ -63,6 +79,9 @@
   font-size: 16px;
   font-family: vars.$font-base;
   line-height: 19px;
+  @include mixins.large {
+    display: none;
+  }
 }
 
 .right {
@@ -74,6 +93,9 @@
   @include mixins.flex-row;
   gap: 8px;
   height: 17px;
+  @include mixins.small {
+    display: none;
+  }
 }
 
 .phone-icon {
@@ -88,6 +110,22 @@
   font-family: vars.$font-title;
 }
 
+.btn-mobile {
+  display: none;
+  width: 49px;
+  height: 49px;
+  border: none;
+  border-radius: 10px;
+  background: vars.$color-green;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  @include mixins.medium {
+    display: flex;
+  }
+}
 .make-request{
   width: 204px;
   height: 49px;
@@ -97,10 +135,17 @@
   font-family: vars.$font-title;
   border-radius: 10px;
   border-color: vars.$color-white;
+
+  @include mixins.medium {
+    display: none;
+  }
 }
 .contact {
   text-decoration: none;
 }
 </style>
-<script setup lang="ts">
+<script setup>
+import { ref } from 'vue';
+// переменная для видимости боковой панели
+const isDrawerOpen = ref(false);
 </script>
