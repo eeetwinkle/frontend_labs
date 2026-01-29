@@ -34,7 +34,7 @@
       </li>
     </ul>
 
-    <Button class="make-request">Оставить заявку</Button>
+    <button class="make-request">Оставить заявку</button>
 
     <div class="info">
       <div class="bottom-text">© Загдом, 2021</div>
