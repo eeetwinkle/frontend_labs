@@ -45,18 +45,18 @@
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   width: 100%;
-  max-width: 100vw; /* Ограничиваем ширину */
-  overflow-x: hidden; /* Скрываем горизонтальный скролл */
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .main {
   padding: 24px;
   text-align: center;
   width: 100%;
-  overflow-x: hidden; /* Важно! */
+  overflow-x: hidden;
 
   @include mixins.small {
-    padding: 16px; /* Уменьшаем padding на мобилках */
+    padding: 16px;
   }
 }
 
@@ -71,7 +71,7 @@
   right: 50%;
   margin-left: -54vw;
   margin-right: -50vw;
-  overflow: auto; /* Изменяем overflow */
+  overflow: auto;
   box-sizing: content-box;
 
   @include mixins.small {
@@ -93,7 +93,7 @@
     margin-left: 16px;
     margin-right: 16px;
     margin-top: 16px;
-    width: calc(100% - 32px); /* Вычитаем margin */
+    width: calc(100% - 32px);
   }
 }
 

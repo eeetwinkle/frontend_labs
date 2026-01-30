@@ -1,3 +1,11 @@
+<script setup>
+import { ref } from 'vue'
+import Modal from './Modal.vue'
+
+const isModalOpen = ref(false)
+const isDrawerOpen = ref(false);
+</script>
+
 <template>
   <header class="header">
     <div class="inner">
@@ -19,13 +27,15 @@
           </a>
         </div>
 
-        <button class="make-request">Оставить заявку</button>
+        <button class="make-request" @click="isModalOpen = true">Оставить заявку</button>
         <button class="btn-mobile" @click="isDrawerOpen = true">
           <img src="~/assets/images/menu.svg" class="menu-icon" />
         </button>
       </div>
 
       <Drawer :isOpen="isDrawerOpen" @close="isDrawerOpen = false" />
+
+      <Modal v-model:open="isModalOpen" />
 
     </div>
   </header>
@@ -144,8 +154,4 @@
   text-decoration: none;
 }
 </style>
-<script setup>
-import { ref } from 'vue';
-// переменная для видимости боковой панели
-const isDrawerOpen = ref(false);
-</script>
+
