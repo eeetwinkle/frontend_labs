@@ -53,9 +53,10 @@ defineProps({
 }
 
 .project-title {
-  font-family: vars.$font-title;
-  font-weight: 700;
-  font-size: 24px;
+  font-family: vars.$font-base;
+  font-weight: 500;
+  text-align: left;
+  font-size: 20px;
   line-height: 1.2;
   margin: 0 0 16px 0;
   color: vars.$color-black;
@@ -63,6 +64,8 @@ defineProps({
 
 .project-description {
   font-family: vars.$font-base;
+  font-weight: 400;
+  text-align: left;
   font-size: 16px;
   line-height: 1.5;
   color: vars.$color-gray;

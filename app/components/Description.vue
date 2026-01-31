@@ -59,7 +59,7 @@
   padding: 100px 88px;
   margin: 0 auto;
   box-sizing: border-box;
-  text-align: left; /* ВОТ ЭТО СВОЙСТВО Я ПРОПУСТИЛ */
+  text-align: left;
 
   @include mixins.large {
     padding: 60px 32px;
@@ -185,7 +185,6 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 1.2;
-  margin-bottom: 6px;
   color: vars.$color-black;
   margin: 0 0 6px 0;
 
