@@ -10,9 +10,9 @@ const isModalOpen = ref(false)
     <img src="../assets/images/logo-footer.svg" class="logo" alt="Logo"/>
 
     <ul class="sections">
-      <li>Реализованные проекты</li>
-      <li>Новости</li>
-      <li>Контакты</li>
+      <li><NuxtLink to="/" class="page-link">Реализованные проекты</NuxtLink></li>
+      <li><NuxtLink to="/news" active-class="active-link" class="page-link">Новости</NuxtLink></li>
+      <li><NuxtLink to="/contacts" class="page-link">Контакты</NuxtLink></li>
     </ul>
 
     <ul class="sections contacts-list">
@@ -195,4 +195,11 @@ const isModalOpen = ref(false)
   color: vars.$color-white;
   text-decoration: none;
 }
+.page-link {
+  text-decoration: none;
+  color: vars.$color-white;
+  font-size: 16px;
+  font-family: vars.$font-base;
+}
+
 </style>

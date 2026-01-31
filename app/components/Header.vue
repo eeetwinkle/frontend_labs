@@ -13,9 +13,9 @@ const isDrawerOpen = ref(false);
       <div class="left">
         <img src="../assets/images/logo-header.svg" class="logo" />
         <ul class="menu">
-          <li>Реализованные проекты</li>
-          <li>Новости</li>
-          <li>Контакты</li>
+          <li><NuxtLink to="/" active-class="active-link" class="page-link">Реализованные проекты</NuxtLink></li>
+          <li><NuxtLink to="/news" active-class="active-link" class="page-link">Новости</NuxtLink></li>
+          <li><NuxtLink to="/contacts" active-class="active-link"  class="page-link">Контакты</NuxtLink></li>
         </ul>
       </div>
 
@@ -153,6 +153,18 @@ const isDrawerOpen = ref(false);
 }
 .contact {
   text-decoration: none;
+}
+.page-link {
+  text-decoration: none;
+  color: vars.$color-gray;
+  font-size: 16px;
+  font-family: vars.$font-base;
+}
+.active-link {
+  text-decoration: none;
+  color: vars.$color-green;
+  font-size: 16px;
+  font-family: vars.$font-base;
 }
 </style>
 
