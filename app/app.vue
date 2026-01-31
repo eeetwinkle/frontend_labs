@@ -50,50 +50,38 @@
 }
 
 .main {
-  padding: 24px;
   text-align: center;
   width: 100%;
   overflow-x: hidden;
-
-  @include mixins.small {
-    padding: 16px;
-  }
 }
 
 
 .projects-section {
-  background-color: vars.$color-light-green;
+
+  background: vars.$color-light-green;
   padding-bottom: 100px;
+  padding-top: 40px;
 
-  position: relative;
-  width: 105vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -54vw;
-  margin-right: -50vw;
-  overflow: auto;
-  box-sizing: content-box;
-
-  @include mixins.small {
-    padding-bottom: 60px;
-    padding-top: 40px;
-    margin-top: 40px;
-    margin-right: 10px;
-    margin-bottom: 40px;
+  @include mixins.large {
+    padding: 30px 0 40px 0;
   }
-}
 
+}
 
 .projects-container {
   margin-left: 88px;
   margin-right: 88px;
   margin-top: 40px;
+  @include mixins.large {
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-top: 30px;
+  }
 
   @include mixins.small {
     margin-left: 16px;
     margin-right: 16px;
     margin-top: 16px;
-    width: calc(100% - 32px);
   }
 }
 

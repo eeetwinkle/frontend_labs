@@ -63,27 +63,31 @@ const newsItems = [
 @use "~/assets/scss/mixins" as mixins;
 
 .news-section {
-  padding-bottom: 100px;
+  //padding-bottom: 100px;
   width: 100%;
 
-  @include mixins.small {
-    padding-bottom: 60px;
+  padding: 40px 0 100px 0;
+  @include mixins.large {
+    padding: 30px 0 40px 0;
     overflow: visible;
   }
 }
-
 .container {
+  margin-left: 88px;
+  margin-right: 88px;
   margin-top: 40px;
-  width: 100%;
-  max-width: 100%;
-  padding: 0 88px;
   box-sizing: border-box;
 
   @include mixins.large {
-    padding: 0 32px;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-top: 30px;
   }
+
   @include mixins.small {
-    padding: 0;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
   }
 }
 

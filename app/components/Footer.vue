@@ -158,8 +158,8 @@ const isModalOpen = ref(false)
   background-color: vars.$color-green;
   font-family: vars.$font-title;
   border-radius: 10px;
-  border-color: vars.$color-footer;
   justify-self: end;
+  border-color: rgba(0,0,0,0);
   @include mixins.large {
     justify-self: start;
   }

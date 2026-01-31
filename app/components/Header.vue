@@ -136,6 +136,7 @@ const isDrawerOpen = ref(false);
     display: flex;
   }
 }
+
 .make-request{
   width: 204px;
   height: 49px;
@@ -144,7 +145,7 @@ const isDrawerOpen = ref(false);
   background-color: vars.$color-green;
   font-family: vars.$font-title;
   border-radius: 10px;
-  border-color: vars.$color-white;
+  border-color: rgba(0,0,0,0);
 
   @include mixins.medium {
     display: none;
