@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from 'vue'
 import Modal from './Modal.vue'
+import { mockContacts } from '~/mock/contacts'
+
+const { phone, email, address } = mockContacts
 
 const isModalOpen = ref(false)
 </script>
@@ -17,16 +20,16 @@ const isModalOpen = ref(false)
 
     <ul class="sections contacts-list">
       <li>
-        <a href="tel:+79009009090" class="contact">
+        <a :href="`tel:${phone.value}`" class="contact">
           <img src="~/assets/images/phone.svg" class="icon" alt="Phone"/>
-          <span class="text">+7 (900) 900-90-90</span>
+          <span class="text">{{ phone.label }}</span>
         </a>
       </li>
 
       <li>
-        <a href="mailto:info@gmail.com" class="contact">
+        <a :href="`mailto:${email.value}`" class="contact">
           <img src="~/assets/images/mail.svg" class="icon" alt="Email"/>
-          <span class="text">info@gmail.com</span>
+          <span class="text">{{ email.label }}</span>
         </a>
       </li>
 
@@ -34,8 +37,8 @@ const isModalOpen = ref(false)
         <div class="contact address">
           <img src="~/assets/images/location.svg" class="icon" alt="Location"/>
           <span class="text">
-            г. Владивосток<br />
-            ул. Выселковая 49, стр. 3
+            {{ address.city }}<br />
+            {{ address.street }}
           </span>
         </div>
       </li>

@@ -1,9 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 import Modal from './Modal.vue'
+import { mockContacts } from '~/mock/contacts'
 
 const isModalOpen = ref(false)
 const isDrawerOpen = ref(false);
+
+const { phone} = mockContacts
 </script>
 
 <template>
@@ -21,9 +24,10 @@ const isDrawerOpen = ref(false);
 
       <div class="right">
         <div class="phone-block">
+
           <img src="~/assets/images/phone.svg" class="phone-icon" />
-          <a href="tel:+79009009090" class="contact">
-            <span class="phone-text">+7 (900) 900-90-90</span>
+          <a :href="`tel:${phone.value}`" class="contact">
+            <span class="phone-text">{{ phone.label }}</span>
           </a>
         </div>
 
