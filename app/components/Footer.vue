@@ -163,6 +163,10 @@ const isModalOpen = ref(false)
   border-radius: 10px;
   justify-self: end;
   border-color: rgba(0,0,0,0);
+  &:hover {
+    background-color: vars.$color-light-green;
+    color: vars.$color-footer;
+  }
   @include mixins.large {
     justify-self: start;
   }
