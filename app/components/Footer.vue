@@ -1,9 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import Modal from './Modal.vue'
-import { mockContacts } from '~/mock/contacts'
-
-const { phone, email, address } = mockContacts
+import ContactsFooter from './ContactsFooter.vue'
 
 const isModalOpen = ref(false)
 </script>
@@ -18,31 +16,8 @@ const isModalOpen = ref(false)
       <li><NuxtLink to="/contacts" class="page-link">Контакты</NuxtLink></li>
     </ul>
 
-    <ul class="sections contacts-list">
-      <li>
-        <a :href="`tel:${phone.value}`" class="contact">
-          <img src="~/assets/images/phone.svg" class="icon" alt="Phone"/>
-          <span class="text">{{ phone.label }}</span>
-        </a>
-      </li>
+    <ContactsFooter />
 
-      <li>
-        <a :href="`mailto:${email.value}`" class="contact">
-          <img src="~/assets/images/mail.svg" class="icon" alt="Email"/>
-          <span class="text">{{ email.label }}</span>
-        </a>
-      </li>
-
-      <li>
-        <div class="contact address">
-          <img src="~/assets/images/location.svg" class="icon" alt="Location"/>
-          <span class="text">
-            {{ address.city }}<br />
-            {{ address.street }}
-          </span>
-        </div>
-      </li>
-    </ul>
     <button class="make-request" @click="isModalOpen = true">Оставить заявку</button>
 
     <div class="info">
@@ -70,6 +45,7 @@ const isModalOpen = ref(false)
   background: vars.$color-footer;
   color: vars.$color-white;
   margin-top: auto;
+
   @include mixins.large {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -121,38 +97,18 @@ const isModalOpen = ref(false)
     align-items: flex-start;
   }
 }
-.contacts-list {
-  grid-area: contacts;
-}
-
-.contacts-list .text {
-  font-family: vars.$font-title;
-  font-size: 14px;
-  line-height: 17px;
-  white-space: pre-line;
-}
-
-.contact {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.icon {
-  width: 16px;
-  height: 16px;
-}
 
 .bottom-text {
   font-size: 14px;
   opacity: 0.6;
   font-family: vars.$font-base;
+
   @include mixins.small {
     font-size: 12px;
   }
 }
 
-.make-request{
+.make-request {
   grid-area: btn;
   width: 204px;
   height: 49px;
@@ -163,6 +119,7 @@ const isModalOpen = ref(false)
   border-radius: 10px;
   justify-self: end;
   border-color: rgba(0,0,0,0);
+
   @include mixins.large {
     justify-self: start;
   }
@@ -174,6 +131,7 @@ const isModalOpen = ref(false)
     margin-top: 8px;
   }
 }
+
 .info {
   grid-area: legal;
   width: 100%;
@@ -194,15 +152,11 @@ const isModalOpen = ref(false)
     margin-top: 20px;
   }
 }
-.contact {
-  color: vars.$color-white;
-  text-decoration: none;
-}
+
 .page-link {
   text-decoration: none;
   color: vars.$color-white;
   font-size: 16px;
   font-family: vars.$font-base;
 }
-
 </style>
