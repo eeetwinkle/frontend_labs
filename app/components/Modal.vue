@@ -10,19 +10,8 @@
 
           <DialogTitle class="title">Оставить заявку</DialogTitle>
 
-          <div class="form-content">
-            <input type="text" placeholder="Имя" class="input" />
-            <input type="tel" placeholder="Телефон" class="input" />
-            <input type="tel" placeholder="Сообщение" class="input-message" />
+          <Form />
 
-            <button class="make-request" >Оставить заявку</button>
-            <p class="agreement-text">
-              Нажимая на кнопку «Отправить», вы принимаете
-              <a href="/user-agreement" class="link">пользовательское соглашение</a>
-              и
-              <a href="/privacy-policy" class="link">политику конфиденциальности</a>
-            </p>
-          </div>
         </div>
       </DialogContent>
     </DialogPortal>
@@ -134,97 +123,6 @@ const emit = defineEmits(['update:open'])
   width: 100%;
   @include mixins.small {
     font-size: 20px;
-  }
-}
-
-.form-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.input {
-  height: 58px;
-  width: 100%;
-  max-width: 384px;
-  color: vars.$color-gray;
-  font-family: vars.$font-base;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0);
-  margin-top: 25px;
-  padding: 0 16px;
-  box-sizing: border-box;
-  font-size: 16px;
-  justify-content: start;
-
-  &::placeholder {
-    color: vars.$color-gray;
-  }
-  @include mixins.small {
-    font-size: 12px;
-    height: 45px;
-    margin-top: 20px;
-  }
-}
-
-.input-message {
-  margin-top: 25px;
-  height: 100px;
-  width: 100%;
-  max-width: 384px;
-  color: vars.$color-gray;
-  font-family: vars.$font-base;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0);
-  padding: 16px;
-  box-sizing: border-box;
-  font-size: 16px;
-  resize: vertical;
-  &::placeholder {
-    color: vars.$color-gray;
-  }
-  @include mixins.small {
-    font-size: 12px;
-    height: 80px;
-    margin-top: 20px;
-  }
-}
-
-.make-request{
-  grid-area: btn;
-  width: 204px;
-  height: 49px;
-  font-size: 14px;
-  color: vars.$color-white;
-  background-color: vars.$color-green;
-  font-family: vars.$font-title;
-  border-radius: 10px;
-  border-color: rgba(0,0,0,0);
-  justify-self: end;
-  margin-top: 20px;
-}
-
-.agreement-text {
-  margin-top: 10px;
-  text-align: center;
-  color: vars.$color-gray;
-  font-family: vars.$font-base;
-  font-size: 14px;
-  line-height: 1.4;
-  width: 100%;
-  max-width: 384px;
-  @include mixins.small {
-    font-size: 10px;
-  }
-}
-
-.link {
-  color: vars.$color-green;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
   }
 }
 

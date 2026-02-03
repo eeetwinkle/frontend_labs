@@ -150,6 +150,10 @@ const { phone} = mockContacts
   font-family: vars.$font-title;
   border-radius: 10px;
   border-color: rgba(0,0,0,0);
+  &:hover {
+    background-color: vars.$color-footer;
+    color: vars.$color-green;
+  }
 
   @include mixins.medium {
     display: none;
