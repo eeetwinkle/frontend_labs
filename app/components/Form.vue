@@ -123,6 +123,7 @@ const onSubmit = handleSubmit((values) => {
 .input-message {
   margin-top: 25px;
   height: 100px;
+  max-height: 170px;
   width: 384px;
   color: vars.$color-gray;
   font-family: vars.$font-base;
@@ -138,6 +139,7 @@ const onSubmit = handleSubmit((values) => {
   @include mixins.small {
     font-size: 12px;
     height: 80px;
+    max-height: 80px;
     margin-top: 20px;
     width: 200px;
   }
