@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import Modal from './Modal.vue'
-import ContactsFooter from './ContactsFooter.vue'
+import ContactsInfo from './ContactsInfo.vue'
 
 const isModalOpen = ref(false)
 </script>
@@ -16,7 +16,7 @@ const isModalOpen = ref(false)
       <li><NuxtLink to="/contacts" class="page-link">Контакты</NuxtLink></li>
     </ul>
 
-    <ContactsFooter />
+    <ContactsInfo theme="footer"/>
 
     <button class="make-request" @click="isModalOpen = true">Оставить заявку</button>
 

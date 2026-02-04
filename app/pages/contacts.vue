@@ -9,6 +9,7 @@ import {
   YandexMapGeolocationControl,
 } from "vue-yandex-maps";
 import { mockContacts } from '~/mock/contacts'
+import ContactsInfo from "~/components/ContactsInfo.vue";
 
 const { address } = mockContacts
 
@@ -23,7 +24,7 @@ const { address } = mockContacts
       <div class="contacts-wrapper">
         <div class="info-column">
           <h1 class="page-title">Контакты</h1>
-          <ContactsInfo />
+          <ContactsInfo theme="contact-page"/>
         </div>
 
         <div class="map-column">
