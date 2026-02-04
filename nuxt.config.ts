@@ -1,5 +1,10 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  modules: [
+    'vue-yandex-maps/nuxt',
+  ],
+  yandexMaps: {
+    apikey: process.env.YANDEX_MAPS_API_KEY,
+  },
+  compatibilityDate: '2026-01-31',
   devtools: { enabled: true }
 })

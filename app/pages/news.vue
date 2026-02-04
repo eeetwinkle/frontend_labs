@@ -62,11 +62,7 @@ const onPageChange = (page) => {
 <template>
   <div class="page-news">
     <div class="container">
-      <div class="breadcrumbs">
-        <NuxtLink to="/" class="crumb-link green">Главная</NuxtLink>
-        <span class="separator">/</span>
-        <span class="crumb-current">Новости</span>
-      </div>
+      <Breadcrumbs currentText="Новости" />
 
       <h1 class="page-title">Новости</h1>
 
@@ -114,41 +110,11 @@ const onPageChange = (page) => {
   }
 }
 
-.breadcrumbs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 40px;
-  font-family: vars.$font-base;
-  font-size: 14px;
-  color: vars.$color-gray;
-}
-
-.crumb-link {
-  color: vars.$color-gray;
-  transition: color 0.2s;
-  text-decoration: none;
-
-  &.green {
-    color: vars.$color-green;
-  }
-
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-.separator {
-  color: vars.$color-gray;
-}
-
-.crumb-current {
-  color: vars.$color-gray;
-}
-
 .page-title {
+  text-align: left;
   font-family: vars.$font-title;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 46px;
   margin: 0 0 40px 0;
   color: vars.$color-black;
 
