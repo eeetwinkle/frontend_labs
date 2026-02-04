@@ -23,7 +23,7 @@ const { address } = mockContacts
       <div class="contacts-wrapper">
         <div class="info-column">
           <h1 class="page-title">Контакты</h1>
-          <ContactsInfo />
+          <ContactsInfo theme="contact-page"/>
         </div>
 
         <div class="map-column">
